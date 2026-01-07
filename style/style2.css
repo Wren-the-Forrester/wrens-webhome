@@ -1,0 +1,59 @@
+ @font-face {
+     font-family: "im fell dw pica";
+     src: url("/fonts/IMFellDWPica-Regular.ttf");
+}
+ @font-face {
+     font-family: "im fell dw pica";
+     src: url("/fonts/IMFellDWPica-Italics.ttf");
+}
+@font-face {
+     font-family: "primitive";
+     src: url("/fonts/Primitive.ttf");
+}
+
+body{
+    background-color:antiquewhite;
+    color:black;
+    font:16px "im fell dw pica";
+    line-height: 1.3em
+}
+
+footer{text-align: center}
+
+.clr {clear:both;}
+
+a {border-style: none; text-decoration: none;}
+
+.button {
+  background: black;
+  color: antiquewhite;
+  font-family: primitive, serif;
+  outline: gray
+
+}
+a{; color: indigo;
+    text-decoration: underline; text-decoration-style: dotted;
+    font-family: primitive
+}
+
+a:hover{color: mediumpurple;
+    text-decoration: underline;
+}
+
+.block {
+    float:left;
+    width:33.3%;
+    padding:5px;
+    box-sizing: border-box;
+}
+
+h1, h2{font-family: "primitive", serif}
+
+.container {
+margin: 3em auto;
+width: 90%;
+max-width: 2000px;
+background-color:
+color: #151515;
+border:double black 15px;
+    padding:20px 20px;}
