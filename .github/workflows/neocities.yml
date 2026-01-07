@@ -1,4 +1,4 @@
-            - name: Neocities Deploy
+name: Neocities Deploy
   # You may pin to the exact commit or the version.
   # uses: kognise/neocities-deploy-action@e93cafb867b713c9204d1421803455f33f76ef30
   uses: kognise/neocities-deploy-action@v1
