@@ -1,17 +1,33 @@
-name: Deploy to Neocities
-  with:
-    # Neocities API key for site to deploy to
-    api_key: ${{ secrets.NEOCITIES_API_TOKEN }}
-    # Local folder to deploy to neocities
-    dist_dir: # default is public
-    # Set to true if you are a Neocities supporter to bypass file type upload restrictions
-    neocities_supporter: # default is false
-    # Delete orphaned files on neocities that don't exist in distDir
-    cleanup: # default is false
-    # Set to true if you want to print deploy preview stats prior to deploying.
-    preview_before_deploy: # optional, default is true
-    # A glob string that prevents matched files from ever being deleted.
-    protected_files: # optional
-    # Neocities API key for site to deploy to
-    api_token: # optional
+name: Deploy to neocities
+
+on:  
+  push:  
+    branches:  
+      - main
+
+concurrency:  
+  group: deploy-to-neocities  
+  cancel-in-progress: true
+
+jobs:  
+  deploy:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - uses: actions/checkout@v3  
+      
+      - name: Use Node.js  
+        uses: actions/setup-node@v3  
+        with:  
+          node-version: lts*
           
+      - name: Install deps and build  
+        run:  
+          npm i  
+          npm run build  
+          
+      - name: Deploy to neocities  
+        uses: bcomnes/deploy-to-neocities@v2  
+        with:  
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}  
+          cleanup: false  
+          dist_dir: public
