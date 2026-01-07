@@ -1,12 +1,10 @@
-            - name: Deploy to Neocities using Ruby CLI
+            - name: Neocities Deploy
   # You may pin to the exact commit or the version.
-  # uses: jonchang/deploy-neocities@fb729c428dc0bb4d995de51f462ffcbeb06824a1
-  uses: jonchang/deploy-neocities@v2
+  # uses: kognise/neocities-deploy-action@e93cafb867b713c9204d1421803455f33f76ef30
+  uses: kognise/neocities-deploy-action@v1
   with:
-    # Neocities API token
-    key: 
-    # Local directory to deploy
-    dir: wrens-webhome
-    # Also delete remote files that don't exist locally
-    clean: # optional
+    # The directory to deploy
+    directory: wrens-webhome
+    # Your Neocities API token
+    neocities_token: ${{ secrets.NEOCITIES_API_TOKEN }}
           
